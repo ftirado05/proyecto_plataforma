@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="./img/icono2.ico">
+  <title>SmartEnergy</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<script src="//code.tidio.co/r6wzcjsrdfj2eljthqlnxxi6zcscio2q.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body>
+  <a href="./Manual_Informe/MANUAL_SMARTENERGY.pdf" class="floating-icon" target="_blank" style="background-color: #4CAF50;">
+    <i class="fa-solid fa-circle-info"></i>
+  </a>
+
+
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>SmartEnergy</h1>
+      <!-- Botón de Cerrar Sesión -->
+      <button class="logout-button" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+      <a href="#dashboard">Inicio</a>
+      <a href="#dispositivos">Dispositivos</a>
+      <a href="#recomendaciones">Recomendaciones</a>
+      <a href="#informes">Informes</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#soporte">Soporte</a>
+      <a href="#planes">Planes</a>
+    </nav>
+
+    <!-- Contenido -->
+    <div class="content" id="dashboard">
+      <h2>Inicio</h2>
+      <div class="user-profile">
+        <img src="./img/user_hello1.png" alt="user_hello">
+        <p>Bienvenido, <span id="username">Usuario</span></p>
+      </div>
+      <div class="card">
+        <p>Consumo actual: <strong>15 kWh</strong></p>
+        <!-- Gráfico de barras simulado -->
+        <div class="vertical-bar-chart">
+          <div class="bar" style="height: 20%; background-color: #4CAF50;">LUN</div>
+          <div class="bar" style="height: 50%; background-color: #fab40d;">MART</div>
+          <div class="bar" style="height: 30%; background-color: #4CAF50;">MIE</div>
+          <div class="bar" style="height: 40%; background-color: #ffee00;">JUE</div>
+          <div class="bar" style="height: 50%; background-color: #fab40d;">VIE</div>
+          <div class="bar" style="height: 100%; background-color: #f32121;">SAB</div>
+          <div class="bar" style="height: 75%; background-color: #f32121;">DOM</div>
+        </div>
+        <!-- <div class="alert">¡Alerta! Consumo excesivo detectado.</div> -->
+        <button class="button" onclick="navigateToSection('dispositivos')">Ver Dispositivos</button>
+      </div>
+      <div>
+        <strong>Significado de colores</strong>
+        <div class="card">
+          <p><i class="fa-solid fa-circle" style="color: #4CAF50;"></i> Bajo</p>
+          <p><i class="fa-solid fa-circle" style="color: #fab40d;"></i> Alto</p>
+          <p><i class="fa-solid fa-circle" style="color: #ffee00;"></i> Moderado</p>
+          <p><i class="fa-solid fa-circle" style="color: #f32121;"></i> Crítico</p>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="content" id="dispositivos" style="display: none;">
+      <h2>Dispositivos</h2>
+      <div class="card" id="add-device-card">
+        <p><i class="fa-solid fa-circle-plus"></i> - Dispositivo</p>
+        <button id="addDeviceBtn" class="button">Agregar</button>
+      </div>
+    </div>
+
+    <div class="content" id="recomendaciones" style="display: none;">
+      <h2>Recomendaciones</h2>
+      <div class="card">
+        <p><strong>Apagar luces en habitaciones vacías</strong></p>
+        <p>Ahorro estimado: 2 kWh</p>
+        <button class="button">Aplicar</button>
+      </div>
+      <div class="card">
+        <p><strong>Reducir uso de aire acondicionado</strong></p>
+        <p>Ahorro estimado: 5 kWh</p>
+        <button class="button">Aplicar</button>
+      </div>
+      <div class="card">
+        <p><strong>Evitar dejar cargadores conectados</strong></p>
+        <p>Ahorro estimado: 3 kWh</p>
+        <button class="button">Aplicar</button>
+      </div>
+    </div>
+
+    <div class="content" id="informes" style="display: none;">
+      <h2>Informes</h2>
+      <div class="card">
+        <p>Informe del consumo.</p>
+        <!-- Gráfico lineal simulado -->
+        <div class="vertical-bar-chart">
+          <div class="bar" style="height: 20%; background-color: #4CAF50;">LUN</div>
+          <div class="bar" style="height: 50%; background-color: #fab40d;">MART</div>
+          <div class="bar" style="height: 30%; background-color: #4CAF50;">MIE</div>
+          <div class="bar" style="height: 40%; background-color: #ffee00;">JUE</div>
+          <div class="bar" style="height: 50%; background-color: #fab40d;">VIE</div>
+          <div class="bar" style="height: 100%; background-color: #f32121;">SAB</div>
+          <div class="bar" style="height: 75%; background-color: #f32121;">DOM</div>
+        </div>
+        <a href="./Manual_Informe/Informe de Consumo Energético.pdf" target="_blank">
+          <button class="button">Descargar Informe</button> 
+        </a>
+      </div>
+    </div>
+
+    <!-- Sección de Soporte -->
+    <section id="soporte" class="content" style="display: none;">
+      <h2>Soporte</h2>
+      <p>¿Tienes alguna duda o problema? Contáctanos por correo y te ayudaremos lo antes posible.</p>
+      <div style="margin-top: 20px;">
+        <p><strong>Correo de soporte:</strong></p>
+        <a href="mailto:soporte@smartenergy.com" class="button" style="margin-top: 10px; padding: 4px 8px; font-size: 15px; display: inline-block; border-radius: 6px;">
+          📧 Soporte
+        </a>
+      </div>
+    </section>
+
+<!-- Sección de Alertas -->
+<section id="alertas" class="content" style="display: none;">
+  <h2>Alertas Recientes</h2>
+  <div style="overflow-x: auto; padding: 1rem;">
+    <table style="width: 100%; border-collapse: collapse; min-width: 400px;">
+      <thead style="background-color: #f5f5f5;">
+        <tr>
+          <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ccc;">Fecha</th>
+          <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ccc;">Dispositivo</th>
+          <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #ccc;">Mensaje</th>
+        </tr>
+      </thead>
+      <tbody id="alertasTabla">
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Seccion de Planes -->
+<section id="planes" class="content" style="display: none;">
+  <h2>Planes de Suscripción</h2>
+  <div class="pricing-container">
+    <div class="pricing-card">
+      <h3>Plan Básico</h3>
+      <p>✔ 30 GB de almacenamiento</p>
+      <p>✔ 3 dispositivo</p>
+      <p><strong>$5/mes</strong></p>
+      <button class="button">Suscribirse</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Plan Intermedio</h3>
+      <p>✔ 100 GB de almacenamiento</p>
+      <p>✔ Hasta 7 dispositivos</p>
+      <p><strong>$15/mes</strong></p>
+      <button class="button">Suscribirse</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Plan Premium</h3>
+      <p>✔ 2 TB de almacenamiento</p>
+      <p>✔ Dispositivos ilimitados</p>
+      <p><strong>$30/mes</strong></p>
+      <button class="button">Suscribirse</button>
+    </div>
+  </div>
+</section>
+<div id="plan-actual" style="text-align:center; font-size: 14px; margin: 10px; color: #333;">
+  Plan actual: <span id="nombre-plan">Ninguno</span>
+</div>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Developer Fabian TG</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+  <script src="scripts.js"></script> <!-- Enlaza el archivo JavaScript -->
+</body>
+
+</html>

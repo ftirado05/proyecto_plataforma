@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - SmartEnergy</title>
+  <link rel="stylesheet" href="login.css"> <!-- Enlaza el archivo CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="./img/icono2.ico">
+<script src="//code.tidio.co/r6wzcjsrdfj2eljthqlnxxi6zcscio2q.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <a href="./Manual/MANUAL_SMARTENERGY.pdf" class="floating-icon" target="_blank" style="background-color: #4CAF50;">
+    <i class="fa-solid fa-circle-info" style="color: #ffff;"></i>
+  </a>
+  <div class="contenedor">
+    <!-- Panel Izquierdo de Bienvenida -->
+    <div class="bienvenida">
+      <h2>¡Bienvenido a SmartEnergy!</h2>
+      <p>Gestiona tu consumo energético de forma inteligente y sostenible. <br> <span style="font-weight: bold;">¿Qué servicios ofrece Smart Energy?</span> Ofrece soluciones de monitoreo de 
+        energía, análisis del consumo y optimización para ayudar a los usuarios a gestionar su uso de energía de manera efectiva y rapida. </p>
+    </div>
+  
+    <!-- Formulario de Inicio de Sesión -->
+    <div id="loginForm" class="formulario">
+      <h2><img src="./img/smartenergylogo__.png" alt="logosmartenergy" style="height: 150px;"></h2>
+      <input type="text" id="loginUsername" placeholder="Nombre de usuario">
+      <div class="input-password">
+        <input type="password" id="loginPassword" placeholder="Contraseña" />
+        <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+      </div>
+
+      <button class="button" onclick="login()">Iniciar Sesión</button>
+      <div class="login-register-links">
+        <a href="#" onclick="showRegisterForm()">¿No tienes cuenta? Regístrate</a>
+      </div>
+    </div>
+  
+    <!-- Formulario de Registro -->
+    <div id="registerForm" class="formulario" style="display: none;">
+      <h2>Registrarse</h2>
+      <input type="text" id="registerUsername" placeholder="Nombre de usuario">
+      <div class="input-password">
+        <input type="password" id="registerPassword" placeholder="Contraseña" />
+        <span class="toggle-password" onclick="toggleRegisterPasswordVisibility()">👁️</span>
+      </div>
+      
+      <button class="button" onclick="register()">Registrarse</button>
+      <div class="login-register-links">
+        <a href="#" onclick="showLoginForm()">¿Ya tienes cuenta? Inicia Sesión</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+<script src="scripts.js"></script>
+
+</body>
+</html>

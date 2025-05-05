@@ -1,0 +1,175 @@
+/* Fondo con gradiente moderno */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url(./img/fondo.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Contenedor general */
+  .contenedor {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 800px;
+    max-width: 95%;
+  }
+  
+  
+  /* Panel izquierdo (bienvenida) */
+  .contenedor::before {
+    background: linear-gradient(to bottom right, #ffffff, #1ac73f);
+    width: 50%;
+    padding: 60px;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .bienvenida {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff, #44d10c);
+    color: black;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .bienvenida h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .bienvenida p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  .formulario {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .formulario input,
+  .formulario .button {
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+  }
+  /* Formulario derecho */
+  #loginForm, #registerForm {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #loginForm h2, #registerForm h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  input {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1em;
+  }
+  
+  .button {
+    padding: 15px;
+    background: linear-gradient(to right, #6dff41, #2bff60);
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+  }
+  
+  .button:hover {
+    background: linear-gradient(to right, #ffffff, #30b41e);
+  }
+  
+  .login-register-links {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .login-register-links a {
+    color: #109276;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-register-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .floating-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+  
+
+  .input-password {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-password input {
+    width: 100%;
+    padding-right: 40px; /* espacio para el ojito */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .input-password {
+    position: relative;
+  }
+  
+  .input-password input {
+    width: 100%;
+    padding-right: 2.5rem; /* espacio para el ojo */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
